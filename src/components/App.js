@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CardDeck from "react-bootstrap/CardDeck";
 import "./App.css";
 import Header from "./Header";
+import Cards from "./Cards";
 import { UNSPLASH_BASE_URL } from "../constants";
 import { UNSPLASH_ACCESS_KEY } from "../accesses";
 
@@ -21,11 +23,11 @@ function App() {
   return (
     <>
       <Header name="My React Gallery" />
-      <div>
-        {data.map((item, index) => (
-          <p>{item.id}</p>
+      <CardDeck>
+        {data.map((item) => (
+          <Cards key={item.id} cardId={item.id} />
         ))}
-      </div>
+      </CardDeck>
     </>
   );
 }
