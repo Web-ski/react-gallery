@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Container from "react-bootstrap/Container";
 import { NavLink, useParams } from "react-router-dom";
+import Header from "../Header";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 import PhotoCards from "../PhotoCards";
@@ -25,11 +27,13 @@ const Collection = (props) => {
   }, []);
 
   return (
-    <>
-      <h1>Kolekcja {id}</h1>
-      <NavLink to="/">
-        <Button variant="primary">Home</Button>
-      </NavLink>
+    <Container>
+      <Header>
+        <h1>Collection {id}</h1>
+        <NavLink to="/">
+          <Button variant="primary">Home</Button>
+        </NavLink>
+      </Header>
       <CardColumns>
         {data.map((item) => (
           <PhotoCards
@@ -41,7 +45,7 @@ const Collection = (props) => {
           />
         ))}
       </CardColumns>
-    </>
+    </Container>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Container from "react-bootstrap/Container";
 import Header from "../Header";
 import CardColumns from "react-bootstrap/CardColumns";
 import CollectionsCards from "../CollectionsCards";
@@ -20,8 +21,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <Header name="reactPhotoGallery" />
+    <Container>
+      <Header>
+        <h1>react Photo Gallery</h1>
+      </Header>
       <CardColumns>
         {data.map((item) => (
           <CollectionsCards
@@ -33,7 +36,7 @@ const Home = () => {
           />
         ))}
       </CardColumns>
-    </>
+    </Container>
   );
 };
 

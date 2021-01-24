@@ -7,11 +7,11 @@ const PhotoCards = ({ cardTitle, cardDescription, cardPhotoUrls, cardId }) => {
   return (
     <Card>
       <Card.Img variant="top" src={cardPhotoUrls.small} />
-      <Card.Body>
+      {/* <Card.Body>
         <Card.Title>{cardTitle}</Card.Title>
         <Card.Text>{cardDescription}</Card.Text>
         <NavLink to={`/collection/${cardId}`}></NavLink>
-      </Card.Body>
+      </Card.Body> */}
     </Card>
   );
 };

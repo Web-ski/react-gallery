@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
+import Navbar from "react-bootstrap/Navbar";
 
-function Header(props) {
+function Header({ children }) {
   return (
-    <h1>{props.name}</h1>
+    <Navbar>
+      <Navbar.Brand href="/">rPG</Navbar.Brand>
+      {children}
+    </Navbar>
   );
 }
 
