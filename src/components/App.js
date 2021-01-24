@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CardDeck from "react-bootstrap/CardDeck";
+import CardColumns from "react-bootstrap/CardColumns";
 import "./App.css";
 import Header from "./Header";
 import Cards from "./Cards";
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`${UNSPLASH_BASE_URL}/photos/?client_id=${UNSPLASH_ACCESS_KEY}`)
+      .get(`${UNSPLASH_BASE_URL}/collections/?client_id=${UNSPLASH_ACCESS_KEY}`)
       .then((res) => {
         const getData = res.data;
         setData(getData);
@@ -23,11 +23,16 @@ function App() {
   return (
     <>
       <Header name="My React Gallery" />
-      <CardDeck>
+      <CardColumns>
         {data.map((item) => (
-          <Cards key={item.id} cardId={item.id} />
+          <Cards
+            key={item.id}
+            cardTitle={item.title}
+            cardDescription={item.description}
+            cardCoverPhoto={item.cover_photo}
+          />
         ))}
-      </CardDeck>
+      </CardColumns>
     </>
   );
 }
