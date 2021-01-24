@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <Container>
       <Header>
-        <h1>react Photo Gallery</h1>
+        <h1 as="h2">Collections</h1>
       </Header>
       <CardColumns>
         {data.map((item) => (

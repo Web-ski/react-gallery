@@ -29,9 +29,9 @@ const Collection = (props) => {
   return (
     <Container>
       <Header>
-        <h1>Collection {id}</h1>
+        <h1 as="h2">Collection</h1>
         <NavLink to="/">
-          <Button variant="primary">Home</Button>
+          <Button variant="light">Home</Button>
         </NavLink>
       </Header>
       <CardColumns>
