@@ -15,10 +15,26 @@ const Collection = () => {
 
   const [data, setData] = useState([]);
 
+  const addId = (url) => {
+    let newId = url.split("=");
+    return newId[newId.length - 1];
+  };
+
+  const addSubtitle = (url) => {
+    let newTitle = url.split("=");
+    newTitle.pop(newTitle.length - 1);
+    newTitle = newTitle.toString();
+    newTitle = newTitle.split("_");
+    newTitle = newTitle.join(" ");
+    return newTitle;
+  };
+
   useEffect(() => {
     axios
       .get(
-        `${UNSPLASH_BASE_URL}/collections/${id}/photos/?client_id=${UNSPLASH_ACCESS_KEY}`
+        `${UNSPLASH_BASE_URL}/collections/${addId(
+          id
+        )}/photos/?client_id=${UNSPLASH_ACCESS_KEY}`
       )
       .then((res) => {
         const getData = res.data;
@@ -32,7 +48,7 @@ const Collection = () => {
       <Header />
       <Container>
         <Subheader>
-          <h1 as="h2">Collection</h1>
+          <h1 as="h2">{addSubtitle(id)}</h1>
           <NavLink to="/">
             <Button variant="light">Home</Button>
           </NavLink>
