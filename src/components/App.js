@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route path="/users">
+          <Route path="/collection/:id">
             <Collection />
           </Route>
           <Route path="/">

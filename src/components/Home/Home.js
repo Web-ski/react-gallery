@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "./Header";
+import Header from "../Header";
 import CardColumns from "react-bootstrap/CardColumns";
-import Cards from "./Cards";
-import { UNSPLASH_BASE_URL } from "./constants";
-import { UNSPLASH_ACCESS_KEY } from "./accesses";
+import CollectionsCards from "../CollectionsCards";
+import { UNSPLASH_BASE_URL } from "../../constants";
+import { UNSPLASH_ACCESS_KEY } from "../../accesses";
 
-function Home(props) {
+const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -21,11 +21,12 @@ function Home(props) {
 
   return (
     <>
-      <Header name="My React Gallery" />
+      <Header name="reactPhotoGallery" />
       <CardColumns>
         {data.map((item) => (
-          <Cards
+          <CollectionsCards
             key={item.id}
+            cardId={item.id}
             cardTitle={item.title}
             cardDescription={item.description}
             cardCoverPhoto={item.cover_photo}
@@ -34,6 +35,6 @@ function Home(props) {
       </CardColumns>
     </>
   );
-}
+};
 
 export default Home;
