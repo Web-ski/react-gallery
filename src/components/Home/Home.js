@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Header from "../Header";
+import Subheader from "../Subheader";
 import CardColumns from "react-bootstrap/CardColumns";
 import CollectionsCards from "../CollectionsCards";
 import { UNSPLASH_BASE_URL } from "../../constants";
@@ -21,22 +22,25 @@ const Home = () => {
   }, []);
 
   return (
-    <Container>
-      <Header>
-        <h1 as="h2">Collections</h1>
-      </Header>
-      <CardColumns>
-        {data.map((item) => (
-          <CollectionsCards
-            key={item.id}
-            cardId={item.id}
-            cardTitle={item.title}
-            cardDescription={item.description}
-            cardCoverPhoto={item.cover_photo}
-          />
-        ))}
-      </CardColumns>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Subheader>
+          <h1 as="h2">Collections</h1>
+        </Subheader>
+        <CardColumns>
+          {data.map((item) => (
+            <CollectionsCards
+              key={item.id}
+              cardId={item.id}
+              cardTitle={item.title}
+              cardDescription={item.description}
+              cardCoverPhoto={item.cover_photo}
+            />
+          ))}
+        </CardColumns>
+      </Container>
+    </>
   );
 };
 

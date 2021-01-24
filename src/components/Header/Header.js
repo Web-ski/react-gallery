@@ -9,7 +9,6 @@ function Header({ children }) {
         <Navbar.Brand href="/">rPG</Navbar.Brand>
         <h2 as="h1">react Photo Gallery</h2>
       </Navbar>
-      <Container>{children}</Container>
     </>
   );
 }
