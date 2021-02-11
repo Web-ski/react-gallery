@@ -3,10 +3,15 @@ import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Header from "../Header";
 import Subheader from "../Subheader";
+import StartInfo from "../StartInfo";
 import CardColumns from "react-bootstrap/CardColumns";
 import CollectionsCards from "../CollectionsCards";
 import { UNSPLASH_BASE_URL } from "../../constants";
 import { UNSPLASH_ACCESS_KEY } from "../../accesses";
+
+const subheaderStyle = {
+  margin: "0px auto 20px",
+};
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -23,10 +28,13 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <StartInfo />
       <Container>
         <Subheader>
-          <h1 as="h2">Collections</h1>
+          <h1 style={subheaderStyle} as="h2">
+            Collections
+          </h1>
         </Subheader>
         <CardColumns>
           {data.map((item) => (
