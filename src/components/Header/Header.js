@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Navbar";
 
 function Header({ children }) {
   return (

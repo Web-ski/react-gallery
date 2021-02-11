@@ -50,10 +50,10 @@ const Collection = () => {
         <Subheader>
           <h1 as="h2">{addSubtitle(id)}</h1>
           <NavLink to="/">
-            <Button variant="light">Home</Button>
+            <Button variant="primary">Back</Button>
           </NavLink>
         </Subheader>
-        <CardColumns>
+        <CardColumns as="main">
           {data.map((item) => (
             <PhotoCards
               key={item.id}
