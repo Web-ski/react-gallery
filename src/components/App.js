@@ -3,12 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Home";
 import Collection from "./Collection";
+import Contact from "./Contact";
 
 const App = () => {
   return (
     <>
       <Router>
         <Switch>
+          <Route path="/contact">
+            <Contact />
+          </Route>
           <Route path="/collection/:id">
             <Collection />
           </Route>

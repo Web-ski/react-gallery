@@ -1,6 +1,7 @@
 import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
+import { NavLink } from "react-router-dom";
 
 const jumboStyle = {
   position: "relative",
@@ -51,10 +52,13 @@ function StartInfo({ image }) {
       </h6>
       <p style={textStyle}>
         <Button
-          variant="outline-light"
+          as={NavLink}
+          to="/contact"
+          variant="primary"
           style={{
             boxShadow: "0px 0px 10px rgba(0,0,0,0.5)",
             margin: "20px 0 0",
+            textShadow: "none",
           }}
         >
           Learn more
