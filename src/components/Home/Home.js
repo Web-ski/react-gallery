@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
-import Header from "../Header";
+// import Header from "../Header";
 import Subheader from "../Subheader";
 import StartInfo from "../StartInfo";
 import CardColumns from "react-bootstrap/CardColumns";
@@ -15,6 +15,7 @@ const subheaderStyle = {
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [choosenImage, setChoosenImage] = useState();
 
   useEffect(() => {
     axios
@@ -22,15 +23,21 @@ const Home = () => {
       .then((res) => {
         const getData = res.data;
         setData(getData);
-        console.log(getData);
+        //console.log(getData);
       });
   }, []);
+
+  useEffect(() => {
+    let image;
+    image = Math.floor(Math.random() * (data.length + 1));
+    data.length > 0 && setChoosenImage(data[image].cover_photo.urls.raw);
+  }, [data]);
 
   return (
     <>
       {/* <Header /> */}
-      <StartInfo />
       <Container>
+        <StartInfo image={choosenImage} />
         <Subheader>
           <h1 style={subheaderStyle} as="h2">
             Collections
