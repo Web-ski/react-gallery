@@ -14,7 +14,7 @@ const subheaderStyle = {
 };
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [choosenImage, setChoosenImage] = useState();
 
   useEffect(() => {
@@ -23,39 +23,42 @@ const Home = () => {
       .then((res) => {
         const getData = res.data;
         setData(getData);
-        //console.log(getData);
       });
   }, []);
 
   useEffect(() => {
     let image;
-    image = Math.floor(Math.random() * (data.length + 1));
-    data.length > 0 && setChoosenImage(data[image].cover_photo.urls.raw);
+    if (data !== undefined) {
+      image = Math.floor(Math.random() * data.length);
+      console.log(data, image);
+      setChoosenImage(data[image].cover_photo.urls.raw);
+    }
   }, [data]);
 
   return (
-    <>
+    <div style={{ backgroundColor: "#eeeeee", paddingTop: "30px" }}>
       {/* <Header /> */}
       <Container>
-        <StartInfo image={choosenImage} />
+        <StartInfo image={choosenImage && choosenImage} />
         <Subheader>
           <h1 style={subheaderStyle} as="h2">
             Collections
           </h1>
         </Subheader>
         <CardColumns>
-          {data.map((item) => (
-            <CollectionsCards
-              key={item.id}
-              cardId={item.id}
-              cardTitle={item.title}
-              cardDescription={item.description}
-              cardCoverPhoto={item.cover_photo}
-            />
-          ))}
+          {data &&
+            data.map((item) => (
+              <CollectionsCards
+                key={item.id}
+                cardId={item.id}
+                cardTitle={item.title}
+                cardDescription={item.description}
+                cardCoverPhoto={item.cover_photo}
+              />
+            ))}
         </CardColumns>
       </Container>
-    </>
+    </div>
   );
 };
 

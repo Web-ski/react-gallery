@@ -25,6 +25,7 @@ const textStyle = {
   zIndex: "2",
   textShadow: "0px 0px 8px black",
   marginBottom: "20px",
+  fontWeight: "bold",
 };
 
 function StartInfo({ image }) {
