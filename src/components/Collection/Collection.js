@@ -39,9 +39,8 @@ const Collection = () => {
       .then((res) => {
         const getData = res.data;
         setData(getData);
-        console.log(getData);
       });
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -58,8 +57,6 @@ const Collection = () => {
             <PhotoCards
               key={item.id}
               cardId={item.id}
-              cardTitle={item.title}
-              cardDescription={item.description}
               cardPhotoUrls={item.urls}
             />
           ))}

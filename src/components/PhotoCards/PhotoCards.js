@@ -1,17 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
-const PhotoCards = ({ cardTitle, cardDescription, cardPhotoUrls, cardId }) => {
+const PhotoCards = ({ cardPhotoUrls, cardId }) => {
+  const { id } = useParams();
+
   return (
-    <Card>
+    <Card as={NavLink} to={`/collection/${id}/${cardId}`}>
       <Card.Img variant="top" src={cardPhotoUrls.small} />
-      {/* <Card.Body>
-        <Card.Title>{cardTitle}</Card.Title>
-        <Card.Text>{cardDescription}</Card.Text>
-        <NavLink to={`/collection/${cardId}`}></NavLink>
-      </Card.Body> */}
     </Card>
   );
 };
