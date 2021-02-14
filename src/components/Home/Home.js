@@ -30,7 +30,6 @@ const Home = () => {
     let image;
     if (data !== undefined) {
       image = Math.floor(Math.random() * data.length);
-      console.log(data, image);
       setChoosenImage(data[image].cover_photo.urls.raw);
     }
   }, [data]);

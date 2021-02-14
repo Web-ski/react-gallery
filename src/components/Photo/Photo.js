@@ -26,7 +26,7 @@ const Photo = () => {
       .then((res) => {
         const getData = res.data;
         setData(getData);
-        //console.log(getData);
+        console.log(getData);
       });
   }, [id]);
 
@@ -37,8 +37,13 @@ const Photo = () => {
         <Card style={{ margin: "20px 0" }}>
           <Card.Img variant="top" src={data && data.urls.full} />
           <Card.Body>
-            <Card.Text>{data && data.user.name}</Card.Text>
-            <Card.Text>"{data && data.description}"</Card.Text>
+            <Card.Title>{data && data.user.name}</Card.Title>
+            <Card.Text>
+              {data &&
+                (data.description === null
+                  ? "no description"
+                  : `"${data.description}"`)}
+            </Card.Text>
             <NavLink to={addReturnUrl(url)}>
               <Button variant="primary">Back</Button>
             </NavLink>

@@ -38,8 +38,9 @@ const Contact = () => {
               by Paweł Nieczuja-Ostrowski
             </Card.Subtitle>
             <Card.Text style={{ marginTop: "20px" }}>
-              This is a project of simple photo gallery, created with React,
-              Bootstrap and Unsplash API.
+              This is a project of simple photo gallery, created with{" "}
+              <strong>React</strong>,<strong>Bootstrap</strong> and{" "}
+              <strong>Unsplash API</strong>.
             </Card.Text>
             <Card.Link
               href="https://www.linkedin.com/in/pawe%C5%82-nieczuja-ostrowski-6b084a88/"
