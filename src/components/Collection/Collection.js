@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MainTemplate from "../mainTemplate";
 import Container from "react-bootstrap/Container";
 import { NavLink, useParams } from "react-router-dom";
 import Header from "../Header";
@@ -39,33 +40,30 @@ const Collection = () => {
       .then((res) => {
         const getData = res.data;
         setData(getData);
-        console.log(getData);
       });
-  }, []);
+  }, [id]);
 
   return (
-    <>
+    <MainTemplate>
       <Header />
       <Container>
         <Subheader>
           <h1 as="h2">{addSubtitle(id)}</h1>
           <NavLink to="/">
-            <Button variant="light">Home</Button>
+            <Button variant="primary">Back</Button>
           </NavLink>
         </Subheader>
-        <CardColumns>
+        <CardColumns as="main">
           {data.map((item) => (
             <PhotoCards
               key={item.id}
               cardId={item.id}
-              cardTitle={item.title}
-              cardDescription={item.description}
               cardPhotoUrls={item.urls}
             />
           ))}
         </CardColumns>
       </Container>
-    </>
+    </MainTemplate>
   );
 };
 
