@@ -2,7 +2,7 @@
 
 This is a project of simple photo gallery, created with React, Bootstrap for React and Unsplash API.
 
-There yoy can finde more information about the author.
+There you can find more information about the author.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
