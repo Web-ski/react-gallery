@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink, useParams, useRouteMatch } from "react-router-dom";
+import MainTemplate from "../mainTemplate";
 import Header from "../Header";
+import Spinner from "../Spinner";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -31,11 +33,15 @@ const Photo = () => {
   }, [id]);
 
   return (
-    <>
+    <MainTemplate>
       <Header />
       <Container>
         <Card style={{ margin: "20px 0" }}>
-          <Card.Img variant="top" src={data && data.urls.full} />
+          {data !== undefined ? (
+            <Card.Img variant="top" src={data && data.urls.full} />
+          ) : (
+            <Spinner />
+          )}
           <Card.Body>
             <Card.Title>{data && data.user.name}</Card.Title>
             <Card.Text>
@@ -50,7 +56,7 @@ const Photo = () => {
           </Card.Body>
         </Card>
       </Container>
-    </>
+    </MainTemplate>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import MainTemplate from "../mainTemplate";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -24,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <MainTemplate>
       <Header />
       <Container style={contactStyle}>
         <Card style={{ width: "100%" }} className="text-center">
@@ -39,7 +40,7 @@ const Contact = () => {
             </Card.Subtitle>
             <Card.Text style={{ marginTop: "20px" }}>
               This is a project of simple photo gallery, created with{" "}
-              <strong>React</strong>,<strong>Bootstrap</strong> and{" "}
+              <strong>React</strong>, <strong>Bootstrap</strong> and{" "}
               <strong>Unsplash API</strong>.
             </Card.Text>
             <Card.Link
@@ -73,7 +74,7 @@ const Contact = () => {
           </Card.Footer>
         </Card>
       </Container>
-    </>
+    </MainTemplate>
   );
 };
 

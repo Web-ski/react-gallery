@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MainTemplate from "../mainTemplate";
 import Container from "react-bootstrap/Container";
-// import Header from "../Header";
 import Subheader from "../Subheader";
 import StartInfo from "../StartInfo";
 import CardColumns from "react-bootstrap/CardColumns";
@@ -36,7 +36,6 @@ const Home = () => {
 
   return (
     <div style={{ backgroundColor: "#eeeeee", paddingTop: "30px" }}>
-      {/* <Header /> */}
       <Container>
         <StartInfo image={choosenImage && choosenImage} />
         <Subheader>

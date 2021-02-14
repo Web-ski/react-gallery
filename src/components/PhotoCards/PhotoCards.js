@@ -12,6 +12,7 @@ const PhotoCards = ({ cardPhotoUrls, cardId }) => {
     transition: ".3s",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
   };
 
   return (

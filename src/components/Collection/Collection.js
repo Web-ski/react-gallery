@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import MainTemplate from "../mainTemplate";
 import Container from "react-bootstrap/Container";
 import { NavLink, useParams } from "react-router-dom";
 import Header from "../Header";
@@ -43,7 +44,7 @@ const Collection = () => {
   }, [id]);
 
   return (
-    <>
+    <MainTemplate>
       <Header />
       <Container>
         <Subheader>
@@ -62,7 +63,7 @@ const Collection = () => {
           ))}
         </CardColumns>
       </Container>
-    </>
+    </MainTemplate>
   );
 };
 
