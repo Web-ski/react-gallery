@@ -1,8 +1,8 @@
 # react Photo Gallery
 
-This is a project of simple photo gallery, created with React, Bootstrap for React and Unsplash API.
+This is a project of simple photo gallery, created with **React**, **Bootstrap** for React and **Unsplash API**. You can check its functionality at the [link] (https://web-ski.github.io/react-gallery-private/). There you can find also more information about the author.
 
-There you can find more information about the author.
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
