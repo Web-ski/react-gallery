@@ -2,7 +2,7 @@
 
 ![screenshot from the project](/src/jumbo-bg.png)
 
-This is a project of simple photo gallery, created with **React**, **Bootstrap** for React and **Unsplash API**. You can check its functionality at the [link] (https://web-ski.github.io/react-gallery-private/). There you can find also more information about the author.
+This is a project of simple photo gallery, created with **React**, **Bootstrap** for React and **Unsplash API**. You can check its functionality at the [link](https://web-ski.github.io/react-gallery-private/). There you can find also more information about the author.
 
 ---
 
